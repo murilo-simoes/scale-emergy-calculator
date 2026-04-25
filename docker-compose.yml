@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  scale-emergy-calculator:
+    build: .
+    container_name: scale-emergy-calculator
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - scale-net
+
+networks:
+  scale-net:
+    driver: bridge
