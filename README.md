@@ -145,3 +145,6 @@ pytest tests/ -v
 - ARBAULT, D. et al. Emergy evaluation using the calculation software SCALE. *Science of the Total Environment*, v. 472, p. 608-619, 2014.
 - VALYI, I.; ORTEGA, E. Emergy simulator, an open source simulation platform. *Emergy Synthesis 3*, 2004.
 - ZHAO, Y.; XU, J.; YU, Y. Emergy accounting for embodied carbon in China's construction industry. *Ecological Indicators*, v. 158, 2024.
+- FIELDING, R. T. Architectural styles and the design of network-based software architectures. 2000. Tese (Doutorado) — University of California, Irvine, 2000.
+- ODUM, H. T. Environmental accounting: emergy and environmental decision making. New York: John Wiley & Sons, 1996
+
