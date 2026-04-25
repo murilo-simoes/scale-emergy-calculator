@@ -1,0 +1,51 @@
+============================================================
+SCALE-INSPIRED EMERGY CALCULATOR — INSTRUÇÕES DE EXECUÇÃO
+============================================================
+
+REQUISITOS
+----------
+- Python 3.11 ou superior
+- Conexão com internet (apenas para instalar dependências uma vez)
+
+PASSO A PASSO
+-------------
+
+1. Abra o terminal (CMD ou PowerShell) na pasta "src"
+
+2. Instale as dependências:
+   pip install -r requirements.txt
+
+3. Execute o servidor:
+   python app.py
+
+4. Abra o navegador em:
+   http://localhost:8000
+
+5. Para ver a documentação interativa da API (Swagger):
+   http://localhost:8000/docs
+
+EXECUTAR TESTES
+---------------
+   pytest tests/ -v
+
+ESTRUTURA DO PROJETO
+--------------------
+src/
+  app.py                  ← Servidor FastAPI (API REST + templates)
+  requirements.txt        ← Dependências Python
+  modules/
+    lci_manager.py        ← Gerenciamento de dados LCI (padrão Factory)
+    emergy_calculator.py  ← Simulador DFS de emergia (padrão Strategy)
+    observer.py           ← Padrão Observer para eventos
+  templates/
+    index.html            ← Interface web principal
+  static/
+    css/style.css         ← Estilos CSS
+    js/app.js             ← JavaScript frontend (consome API)
+  tests/
+    test_lci_manager.py   ← Testes unitários do LCIManager
+    test_emergy_calculator.py ← Testes unitários do simulador
+    test_api.py           ← Testes de integração da API REST
+  data/
+    sample_lci.json       ← Base LCI de exemplo (8 processos)
+============================================================

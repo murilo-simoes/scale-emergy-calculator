@@ -1,0 +1,365 @@
+/* SCALE Emergy Calculator — design moderno */
+
+:root {
+  --bg-body:    #0d0f12;
+  --bg-card:    #13161b;
+  --bg-card-hv: #181c23;
+  --bg-header:  #0f1217;
+  --border:     #2a2f3a;
+  --border-hv:  #3d4455;
+  --accent:     #ffc107;
+  --accent-dim: rgba(255,193,7,0.12);
+  --text-main:  #e8eaf0;
+  --text-muted: #7c8494;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-hv:   0 8px 32px rgba(0,0,0,0.55);
+  --transition:  0.2s ease;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────── */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding-bottom: 2.5rem;
+}
+
+/* ── Navbar ────────────────────────────────────────────────────────── */
+.navbar {
+  background: rgba(10,12,16,0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0.6rem 1.25rem;
+}
+
+.navbar-brand {
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* ── Cards ─────────────────────────────────────────────────────────── */
+.bg-dark-card {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition), border-color var(--transition);
+  overflow: hidden;
+}
+
+.bg-dark-card:hover {
+  border-color: var(--border-hv) !important;
+  box-shadow: var(--shadow-hv);
+}
+
+.bg-dark-card .card-header {
+  color: var(--text-main) !important;
+  background-color: var(--bg-header) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+
+.bg-dark-card .card-body {
+  padding: 1rem;
+}
+
+.bg-dark-card .card-footer {
+  color: var(--text-muted) !important;
+  background-color: var(--bg-header) !important;
+  border-top: 1px solid var(--border) !important;
+  font-size: 0.78rem;
+  padding: 0.55rem 1.1rem;
+}
+
+/* ── Inputs & Selects ──────────────────────────────────────────────── */
+.form-control,
+.form-select {
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--border) !important;
+  background-color: #0f1217 !important;
+  color: var(--text-main) !important;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  font-size: 0.88rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-dim) !important;
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.form-label {
+  color: var(--text-muted) !important;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+/* ── Botões ─────────────────────────────────────────────────────────── */
+.btn {
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.83rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.btn-warning {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #000 !important;
+  border-radius: var(--radius-md) !important;
+  padding: 0.6rem 1rem;
+  letter-spacing: 0.02em;
+}
+
+.btn-warning:hover {
+  background-color: #ffca2c !important;
+  box-shadow: 0 4px 16px rgba(255,193,7,0.35);
+  transform: translateY(-1px);
+}
+
+.btn-warning:active {
+  transform: translateY(0);
+}
+
+.btn-success {
+  border-radius: var(--radius-sm) !important;
+}
+
+.btn-success:hover {
+  box-shadow: 0 4px 12px rgba(25,135,84,0.35);
+  transform: translateY(-1px);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-danger:hover,
+.btn-outline-info:hover {
+  transform: translateY(-1px);
+}
+
+/* ── Lista de processos ─────────────────────────────────────────────── */
+.process-item {
+  cursor: pointer;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition), padding-left var(--transition);
+  color: var(--text-main);
+  position: relative;
+}
+
+.process-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  border-radius: 0 2px 2px 0;
+  transition: background var(--transition);
+}
+
+.process-item:hover {
+  background-color: var(--bg-card-hv);
+  padding-left: 1.25rem;
+}
+
+.process-item:hover::before {
+  background: var(--border-hv);
+}
+
+.process-item.selected {
+  background-color: var(--accent-dim);
+  padding-left: 1.25rem;
+}
+
+.process-item.selected::before {
+  background: var(--accent);
+}
+
+.process-item:last-child {
+  border-bottom: none;
+}
+
+.proc-name {
+  color: var(--text-main) !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.proc-sub {
+  color: var(--text-muted) !important;
+  font-size: 0.72rem;
+  margin-top: 1px;
+}
+
+/* ── Badges ─────────────────────────────────────────────────────────── */
+.badge-source {
+  background-color: rgba(25,135,84,0.2);
+  color: #4ade80 !important;
+  border: 1px solid rgba(25,135,84,0.4);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.badge-process {
+  background-color: rgba(13,110,253,0.2);
+  color: #60a5fa !important;
+  border: 1px solid rgba(13,110,253,0.4);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* ── Cards de índices (EYR / ELR / ESI) ────────────────────────────── */
+.index-card {
+  background: var(--bg-header);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem;
+  text-align: center;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.index-card:hover {
+  border-color: var(--border-hv);
+  background: var(--bg-card-hv);
+}
+
+.index-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+/* ── Progress bar ───────────────────────────────────────────────────── */
+.progress {
+  background-color: var(--bg-header) !important;
+  border-radius: 99px !important;
+  height: 6px !important;
+}
+
+.progress-bar {
+  border-radius: 99px !important;
+  transition: width 0.6s ease;
+}
+
+/* ── Tabela ─────────────────────────────────────────────────────────── */
+.table-dark {
+  --bs-table-bg: transparent !important;
+  font-size: 0.82rem;
+}
+
+.table-dark thead th {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-color: var(--border) !important;
+  padding-bottom: 0.5rem;
+}
+
+.table-dark tbody tr {
+  border-color: var(--border) !important;
+  transition: background var(--transition);
+}
+
+.table-dark tbody tr:hover {
+  background-color: var(--bg-card-hv) !important;
+}
+
+/* ── Log ────────────────────────────────────────────────────────────── */
+#log-panel {
+  font-size: 0.76rem;
+  line-height: 1.7;
+  background: #080a0d !important;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  padding: 0.75rem !important;
+}
+
+.log-info  { color: #60a5fa; }
+.log-ok    { color: #4ade80; }
+.log-warn  { color: #fbbf24; }
+.log-error { color: #f87171; }
+
+/* ── Modal ──────────────────────────────────────────────────────────── */
+.modal-content {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7) !important;
+  color: var(--text-main) !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border) !important;
+  padding: 1rem 1.25rem;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border) !important;
+}
+
+/* ── Toast ──────────────────────────────────────────────────────────── */
+.toast {
+  border-radius: var(--radius-md) !important;
+  font-size: 0.85rem;
+}
+
+/* ── Inputs dentro de modal ─────────────────────────────────────────── */
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.input-row select,
+.input-row input {
+  flex: 1;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-hv); }
+
+/* ── Misc ───────────────────────────────────────────────────────────── */
+.btn-loading {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Spinner carregamento da lista */
+#process-list .spinner-border {
+  color: var(--accent);
+}
+
+/* Bordas dos cards arredondadas no container */
+.container-fluid .card {
+  border-radius: var(--radius-lg) !important;
+}

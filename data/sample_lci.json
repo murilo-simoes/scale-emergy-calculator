@@ -1,0 +1,107 @@
+{
+  "processes": [
+    {
+      "id": "solar_energy",
+      "name": "Energia Solar",
+      "type": "source",
+      "unit": "J",
+      "uev": 1.0,
+      "description": "Energia solar incidente (fonte primária)",
+      "inputs": [],
+      "output_amount": 1.0
+    },
+    {
+      "id": "rain_geopotential",
+      "name": "Chuva - Energia Geopotencial",
+      "type": "source",
+      "unit": "J",
+      "uev": 8888.0,
+      "description": "Energia geopotencial da chuva",
+      "inputs": [],
+      "output_amount": 1.0
+    },
+    {
+      "id": "rain_chemical",
+      "name": "Chuva - Energia Química",
+      "type": "source",
+      "unit": "J",
+      "uev": 15423.0,
+      "description": "Energia química da chuva",
+      "inputs": [],
+      "output_amount": 1.0
+    },
+    {
+      "id": "wind",
+      "name": "Energia Eólica",
+      "type": "source",
+      "unit": "J",
+      "uev": 623.0,
+      "description": "Energia cinética do vento",
+      "inputs": [],
+      "output_amount": 1.0
+    },
+    {
+      "id": "electricity",
+      "name": "Eletricidade",
+      "type": "process",
+      "unit": "J",
+      "uev": 159000.0,
+      "description": "Geração de eletricidade",
+      "inputs": [
+        {"process_id": "solar_energy", "amount": 0.3},
+        {"process_id": "wind", "amount": 0.1}
+      ],
+      "output_amount": 1.0
+    },
+    {
+      "id": "water_treatment",
+      "name": "Tratamento de Água",
+      "type": "process",
+      "unit": "L",
+      "uev": 2500000.0,
+      "description": "Processo de tratamento de água potável",
+      "inputs": [
+        {"process_id": "electricity", "amount": 0.05},
+        {"process_id": "rain_chemical", "amount": 0.8},
+        {"process_id": "rain_geopotential", "amount": 0.2}
+      ],
+      "output_amount": 1.0
+    },
+    {
+      "id": "grape_production",
+      "name": "Produção de Uva",
+      "type": "process",
+      "unit": "kg",
+      "uev": 1200000.0,
+      "description": "Cultivo e colheita de uvas",
+      "inputs": [
+        {"process_id": "solar_energy", "amount": 0.6},
+        {"process_id": "rain_chemical", "amount": 0.3},
+        {"process_id": "wind", "amount": 0.05}
+      ],
+      "output_amount": 1.0
+    },
+    {
+      "id": "grape_marc_pellets",
+      "name": "Pellets de Bagaço de Uva",
+      "type": "process",
+      "unit": "kg",
+      "uev": 3800000.0,
+      "description": "Processamento de bagaço de uva em pellets energéticos",
+      "inputs": [
+        {"process_id": "grape_production", "amount": 2.5},
+        {"process_id": "electricity", "amount": 0.15}
+      ],
+      "output_amount": 1.0
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "description": "Base de dados LCI de exemplo para o simulador SCALE-inspired",
+    "source": "Dados de referência baseados em Marvuglia et al. (2013)",
+    "units": {
+      "uev": "sej/unidade",
+      "emergy": "sej"
+    }
+  }
+}
