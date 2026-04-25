@@ -73,8 +73,17 @@ python app.py
 
 | URL | Descrição |
 |-----|-----------|
-| `http://localhost:8000` | Interface web principal |
-| `http://localhost:8000/docs` | Documentação interativa da API (Swagger) |
+| `http://localhost:8000` | Interface web local |
+| `http://localhost:8000/docs` | Documentação interativa da API local (Swagger) |
+
+## 🌐 Produção
+
+A aplicação está disponível em produção:
+
+| URL | Descrição |
+|-----|-----------|
+| [scale.murilosimoes.com.br](https://scale.murilosimoes.com.br) | Interface web em produção |
+| [scale.murilosimoes.com.br/docs](https://scale.murilosimoes.com.br/docs) | Documentação interativa da API (Swagger) |
 
 ---
 
