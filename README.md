@@ -141,10 +141,12 @@ pytest tests/ -v
 
 ## Referências
 
-- MARVUGLIA, A. et al. SCALE: A software for calculating emergy based on life cycle inventories. *Ecological Modelling*, v. 248, p. 80-91, 2013.
-- ARBAULT, D. et al. Emergy evaluation using the calculation software SCALE. *Science of the Total Environment*, v. 472, p. 608-619, 2014.
-- VALYI, I.; ORTEGA, E. Emergy simulator, an open source simulation platform. *Emergy Synthesis 3*, 2004.
-- ZHAO, Y.; XU, J.; YU, Y. Emergy accounting for embodied carbon in China's construction industry. *Ecological Indicators*, v. 158, 2024.
+- ARBAULT, D. et al. Emergy evaluation using the calculation software SCALE: case study of a dairy production system. Science of the Total Environment, v. 472, p. 608-619, 2014. Disponível em: https://doi.org/10.1016/j.scitotenv.2013.11.048. Acesso em: abr. 2026.
 - FIELDING, R. T. Architectural styles and the design of network-based software architectures. 2000. Tese (Doutorado) — University of California, Irvine, 2000.
-- ODUM, H. T. Environmental accounting: emergy and environmental decision making. New York: John Wiley & Sons, 1996
+- GAMMA, E. et al. Design patterns: elements of reusable object-oriented software. Boston: Addison-Wesley, 1995.
+- MARVUGLIA, A. et al. SCALE: a software for calculating emergy based on life cycle inventories. Ecological Modelling, v. 248, p. 80-91, 2013. Disponível em: https://doi.org/10.1016/j.ecolmodel.2012.09.013. Acesso em: abr. 2026.
+- ODUM, H. T. Environmental accounting: emergy and environmental decision making. New York: John Wiley & Sons, 1996.
+- VALYI, I.; ORTEGA, E. Emergy simulator, an open source simulation platform for ecological and economic systems. In: BROWN, M. T. et al. (Ed.). Emergy synthesis 3: theory and applications of the emergy methodology. Gainesville: Center for Environmental Policy, University of Florida, 2004. p. 1-15.
+- ZHAO, Y.; XU, J.; YU, Y. Emergy accounting for embodied carbon in China's construction industry: a regional analysis using the input-output model. Ecological Indicators, v. 158, p. 111481, 2024. Disponível em: https://doi.org/10.1016/j.ecolind.2024.111481. Acesso em: abr. 2026.
+
 
