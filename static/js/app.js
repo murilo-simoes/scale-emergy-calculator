@@ -317,6 +317,11 @@ function copyResult() {
   navigator.clipboard.writeText(text).then(() => showToast('Copiado!', 'success'));
 }
 
+function copyExampleJson() {
+  const text = document.getElementById('example-json').textContent;
+  navigator.clipboard.writeText(text).then(() => showToast('JSON copiado!', 'success'));
+}
+
 // ── Import / Export ───────────────────────────────────────────────────────────
 
 async function exportLCI() {
